@@ -26,7 +26,7 @@ function App() {
 
   const addContact = (name, phoneNum, email) => {
     setContacts((prev) => {
-      return [...prev, { name: name, phone: phone, email: email }];
+      return [...prev, { name: name, phoneNum: phoneNum, email: email }];
     });
   };
 
