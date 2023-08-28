@@ -3,8 +3,8 @@ import React from "react";
 export const ContactForm = ({
   name,
   setName,
-  phone,
-  setPhone,
+  phoneNum,
+  setPhoneNum,
   email,
   setEmail,
   handleSubmit
@@ -18,7 +18,6 @@ export const ContactForm = ({
     <>
     
     <form onSubmit={handleSubmit}>
-        <h2>Add Contact</h2>
         <label>
           Name:
           <input
@@ -39,7 +38,7 @@ export const ContactForm = ({
           ></input>
         </label>
         <label>
-          email:
+          E-mail:
           <input
             type="text"
             value={email}
@@ -51,10 +50,6 @@ export const ContactForm = ({
           Submit new contact
         </button>
       </form>
-      <hr />
-      <section>
-        <h2>Contacts</h2>
-      </section>
     </>
   );
 };

@@ -24,8 +24,7 @@ export const AppointmentForm = ({
 
   return (
     <>
-      <section type="submit" onSubmit={handleSubmit}>
-        <h2>Add Appointment</h2>
+      <form type="submit" onSubmit={handleSubmit}>
         <label>
           Title:
           <input
@@ -63,12 +62,7 @@ export const AppointmentForm = ({
           />
         </label>
         <button type="submit">Submit new appointment</button>
-      </section>
-      <hr />
-
-      <section>
-        <h2>Appointments</h2>
-      </section>
+      </form>
     </>
   );
 };
