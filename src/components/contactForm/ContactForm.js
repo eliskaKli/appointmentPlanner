@@ -1,28 +1,31 @@
 import React from "react";
 
-export const ContactForm = ({
-  name,
-  setName,
-  phoneNum,
-  setPhoneNum,
-  email,
-  setEmail,
-  handleSubmit
-}) => {
+export const ContactForm = (
+  props
+  //{ 
+  //name,
+  // setName,
+  // phoneNum,
+  // setPhoneNum,
+  // email,
+  // setEmail,
+  // handleSubmit
+  //}
+) => {
 
-  const handleChangedName = (e) => setName(e.target.value);
-  const handleChangedPhoneNum = (e) => setPhoneNum(e.target.value);
-  const handleChangedEmail = (e) => setEmail(e.target.value);
+  const handleChangedName = (e) => props.setName(e.target.value);
+  const handleChangedPhoneNum = (e) => props.setPhoneNum(e.target.value);
+  const handleChangedEmail = (e) => props.setEmail(e.target.value);
 
   return (
     <>
     
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
         <label>
           Name:
           <input
             type="text"
-            value={name}
+            value={props.name}
             onChange={handleChangedName}
             defaultValue={"FirstName LastName"}
             required
@@ -32,8 +35,9 @@ export const ContactForm = ({
           Phone number:
           <input
             type="number"
-            value={phoneNum}
+            value={props.phoneNum}
             onChange={handleChangedPhoneNum}
+            pattern="^(\d{3}-\d{3}-\d{3})*$"
             required
           ></input>
         </label>
@@ -41,7 +45,7 @@ export const ContactForm = ({
           E-mail:
           <input
             type="text"
-            value={email}
+            value={props.email}
             onChange={handleChangedEmail}
             required
           ></input>

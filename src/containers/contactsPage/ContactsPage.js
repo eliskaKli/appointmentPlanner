@@ -12,6 +12,7 @@ export const ContactsPage = (props) => {
   const [phoneNum, setPhoneNum] = useState("");
   const [email, setEmail] = useState("");
   const [duplicate, setDuplicate] = useState(false);
+  const [alert, setAlert] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,11 +35,13 @@ export const ContactsPage = (props) => {
   useEffect(() => {
     if (props.contacts.some((obj) => obj.name === name)) {
       setDuplicate(true);
+      setAlert('Contact is already in the list.')
+      return;
     } else {
       setDuplicate(false);
-      props.addContact(name, phoneNum, email);
+      setAlert("");
     }
-  }, [name]);
+  }, [props.contacts, name] );
 
   return (
     <div>
@@ -52,6 +55,7 @@ export const ContactsPage = (props) => {
           setPhoneNum={setPhoneNum}
           email={email}
           setEmail={setEmail}
+          alert={alert}
         />
       </section>
       <hr />

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import {
   RouterProvider,
   createBrowserRouter,
@@ -16,8 +16,9 @@ function App() {
   contacts and appointments 
   */
   const [contacts, setContacts] = useState([
-    { name: "name", phoneNum: "phoneNum", email: "email" },
+    // { name: "name", phoneNum: "phoneNum", email: "email" },
   ]);
+
   const [appoints, setAppoints] = useState([]);
   /*
   Implement functions to add data to

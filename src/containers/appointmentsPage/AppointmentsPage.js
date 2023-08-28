@@ -19,6 +19,11 @@ export const AppointmentsPage = (props) => {
     /*
     Add contact info and clear data  
     */
+    props.addAppointment(title, contact, date, time);
+    setTitle("");
+    setContact("");
+    setDate("");
+    setTime("");
   };
 
   return (
@@ -26,10 +31,12 @@ export const AppointmentsPage = (props) => {
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm
+          contacts={props.contacts}
           handleSubmit={handleSubmit}
+          title={title}
+          setTitle={setTitle}
           contact={contact}
           setContact={setContact}
-          title={setTitle}
           date={date}
           setDate={setDate}
           time={time}
@@ -39,7 +46,7 @@ export const AppointmentsPage = (props) => {
       <hr />
       <section>
         <h2>Appointments</h2>
-        <TileList />
+        <TileList object={props.appoints} />
       </section>
     </div>
   );
