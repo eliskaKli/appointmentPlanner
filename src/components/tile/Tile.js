@@ -1,10 +1,10 @@
 import React from "react";
 
 export const Tile = (props) => {
-  // tady si nejsem jistá, jestli mi to rovnou vytáhne potřebná data z objektu
-  const object = Object.values(props);
+  const object = props.info;
+  const values = Object.values(object);
 
-  const info = object.map((value, i) => {
+  const info = values.map((value, i) => {
     let className;
     if (i === 0) {
       className = "tile-title";
@@ -16,11 +16,7 @@ export const Tile = (props) => {
         {value}
       </p>
     );
-  })
+  });
 
-  return (
-    <div className="tile-container">
-     {info}
-    </div>
-  );
+  return <div className="tile-container">{info}</div>;
 };

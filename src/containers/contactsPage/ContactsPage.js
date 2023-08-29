@@ -35,14 +35,30 @@ export const ContactsPage = (props) => {
   useEffect(() => {
     if (props.contacts.some((obj) => obj.name === name)) {
       setDuplicate(true);
-      setAlert('Contact is already in the list.')
+      setAlert("Contact is already in the list.");
       return;
     } else {
       setDuplicate(false);
       setAlert("");
     }
-  }, [props.contacts, name] );
+  }, [props.contacts, name]);
 
+  /* ŘEŠENÍ JINÉHO - TADY JAKO POKUS, JESTLI BY MI TO S NÍM NEFUNGOVALO
+  useEffect(() => {
+    for(const contactItem of props.contacts) {
+      if(contactItem.name === name) {
+        if(!duplicate) {
+          setDuplicate(true);
+          setAlert('Contact is already in the list.');
+        }
+        return;
+      } else {
+        setDuplicate(false);
+        setAlert('');
+      }
+    } 
+  }, [props.contacts, name, duplicate] );
+ */
   return (
     <div>
       <section>
