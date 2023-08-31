@@ -43,22 +43,6 @@ export const ContactsPage = (props) => {
     }
   }, [props.contacts, name]);
 
-  /* ŘEŠENÍ JINÉHO - TADY JAKO POKUS, JESTLI BY MI TO S NÍM NEFUNGOVALO
-  useEffect(() => {
-    for(const contactItem of props.contacts) {
-      if(contactItem.name === name) {
-        if(!duplicate) {
-          setDuplicate(true);
-          setAlert('Contact is already in the list.');
-        }
-        return;
-      } else {
-        setDuplicate(false);
-        setAlert('');
-      }
-    } 
-  }, [props.contacts, name, duplicate] );
- */
   return (
     <div>
       <section>
@@ -76,7 +60,7 @@ export const ContactsPage = (props) => {
       </section>
       <hr />
       <section>
-        <h2>Contacts</h2>
+        <h2>My Contacts</h2>
         <TileList object={props.contacts} />
       </section>
     </div>

@@ -1,6 +1,15 @@
+html {
+  background-color: rgb(57, 112, 99);
+}
+
 #root {
   padding: 30px;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 3% 20%;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
 
 nav > a {
@@ -83,4 +92,15 @@ select {
 
 .tile-container {
   margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  height: 2rem;
+  background-color: rgb(233, 233, 57);
+}
+
+button:hover {
+  font-weight: 700;
 }

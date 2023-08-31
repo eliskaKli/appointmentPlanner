@@ -27,7 +27,7 @@ export const ContactForm = ({
         ></input>
       </label>
       <label>
-        Phone number:
+        Phone number (format 000-000-000):
         <input
           type="tel"
           value={phoneNum}
